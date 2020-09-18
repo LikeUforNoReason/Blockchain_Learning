@@ -1,0 +1,9 @@
+To compile:
+
+gcc -g -o data data.c -lssl -lcrypto
+
+Generate BTC key pair
+
+openssl ecparam -genkey -name secp256k1 -noout -out ec256-key-pair.pem
+openssl ec -in ec256-key-pair.pem -pubout -out pubkey.pem
+openssl ec -in ec256-key-pair.pem -pubout -outform DER -out pubkey.der
